@@ -1,0 +1,1 @@
+import{test}from'node:test';import assert from'node:assert/strict';import{analyze}from'./core.ts';test('timing on grid and bounded drift',()=>{assert.equal(analyze([0,500,1000],120).rms,0);assert.equal(analyze([0,510,990],120).errors[1],10);assert.throws(()=>analyze([0,0],120));assert.throws(()=>analyze([0,500],0));});
